@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Парсинг сайтов и защита от парсинга</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-lg font-bold">Парсинг сайтов и защита от парсинга</div>
+            <div class="lg:hidden">
+                <!-- Кнопка для мобильного меню -->
+                <button class="text-white focus:outline-none" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="index.html" class="hover:text-blue-500">Главная</a></li>
+                <li><a href="parcing.html" class="hover:text-blue-500">Парсинг сайтов</a></li>
+                <li><a href="defend.html" class="hover:text-blue-500">Защита от парсинга</a></li>
+                <li><a href="examples.html" class="hover:text-blue-500">Примеры</a></li>
+                <li><a href="tool.html" class="hover:text-blue-500">Инструменты</a></li>
+                <li><a href="faq.html" class="hover:text-blue-500">FAQ</a></li>
+            </ul>
+        </nav>
+        <!-- Мобильное меню -->
+        <ul id="mobile-menu" class="lg:hidden hidden bg-gray-800 text-white">
+            <li><a href="index.html" class="hover:text-blue-500">Главная</a></li>
+            <li><a href="parcing.html" class="hover:text-blue-500">Парсинг сайтов</a></li>
+            <li><a href="defend.html" class="hover:text-blue-500">Защита от парсинга</a></li>
+            <li><a href="examples.html" class="hover:text-blue-500">Примеры</a></li>
+            <li><a href="tool.html" class="hover:text-blue-500">Инструменты</a></li>
+            <li><a href="faq.html" class="hover:text-blue-500">FAQ</a></li>
+        </ul>
+    </header>
+
+    <script>
+// Функция для переключения мобильного меню
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+    </script>
+
+    <main class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <aside class="col-span-1 bg-white rounded-md shadow-md p-4">
+            <h3 class="text-2xl font-bold mb-4">Навигация</h3>
+            <ul>
+                <li><a href="#1" class="hover:text-blue-500">1. Сбор данных о продуктах</a></li>
+                <li><a href="#2" class="hover:text-blue-500">2. Анализ цен на недвижимость</a></li>
+                <li><a href="#3" class="hover:text-blue-500">3. Мониторинг новостей</a></li>
+                <li><a href="#down" class="hover:text-blue-500">Вниз</a></li>
+            </ul>
+        </aside>
+        <section class="col-span-2">
+            <h2 class="text-3xl font-bold mb-4">Примеры парсинга</h2>
+            <h3 id="1" class="text-2xl font-bold mb-4">1. Сбор данных о продуктах</h3>
+            <p class="text-lg mb-4">
+                Парсинг сайтов онлайн-магазинов позволяет получить информацию о товарах, ценах, скидках и доступности.
+            </p>
+            <img src="src/parcing.png" class="w-full mb-4">
+            <p class="text-lg mb-4">
+                Например, можно спарсить информацию о продуктах с сайта Amazon, eBay или AliExpress.
+            </p>
+            <ul class="list-disc ml-8">
+                <li class="text-lg mb-2">Применение:</li>
+                <li class="text-lg mb-2">Сравнение цен между разными магазинами.</li>
+                <li class="text-lg mb-2">Мониторинг изменения цен.</li>
+                <li class="text-lg mb-2">Создание базы данных о продуктах.</li>
+            </ul>
+
+            <h3 id="2" class="text-2xl font-bold mb-4">2. Анализ цен на недвижимость</h3>
+            <p class="text-lg mb-4">
+                Парсинг сайтов недвижимости позволяет получить информацию о ценах, характеристиках объектов, адресах и других деталях.
+            </p>
+            <img src="src/img2.jpg" class="rounded-md shadow-md w-full mb-4">
+            <p class="text-lg mb-4">
+                Например, можно спарсить информацию о квартирах с сайта Avito, Циан или Яндекс Недвижимость.
+            </p>
+            <ul class="list-disc ml-8">
+                <li class="text-lg mb-2">Применение:</li>
+                <li class="text-lg mb-2">Анализ цен на недвижимость в разных районах.</li>
+                <li class="text-lg mb-2">Поиск выгодных предложений.</li>
+                <li class="text-lg mb-2">Создание интерактивной карты цен на недвижимость.</li>
+            </ul>
+
+            <h3 id="3" class="text-2xl font-bold mb-4">3. Мониторинг новостей</h3>
+            <p class="text-lg mb-4">
+                Парсинг новостных сайтов позволяет отслеживать актуальные новости, а также анализировать тренды и популярные темы.
+            </p>
+            <img src="src/news.jpg" class="rounded-md shadow-md w-full mb-4">
+            <p class="text-lg mb-4">
+                Например, можно спарсить новости с сайта РБК, ТАСС или BBC.
+            </p>
+            <ul class="list-disc ml-8">
+                <li class="text-lg mb-2">Применение:</li>
+                <li class="text-lg mb-2">Создание агрегатора новостей.</li>
+                <li class="text-lg mb-2">Анализ медиа-повестки.</li>
+                <li class="text-lg mb-2">Отслеживание ключевых событий.</li>
+            </ul>
+
+        </section>
+
+        <div id="down"></div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 px-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Парсинг сайтов. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
