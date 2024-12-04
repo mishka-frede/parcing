@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Парсинг сайтов и защита от парсинга</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-lg font-bold">Парсинг сайтов и защита от парсинга</div>
+            <div class="lg:hidden">
+                <!-- Кнопка для мобильного меню -->
+                <button class="text-white focus:outline-none" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="index.html" class="hover:text-blue-500">Главная</a></li>
+                <li><a href="parcing.html" class="hover:text-blue-500">Парсинг сайтов</a></li>
+                <li><a href="defend.html" class="hover:text-blue-500">Защита от парсинга</a></li>
+                <li><a href="examples.html" class="hover:text-blue-500">Примеры</a></li>
+                <li><a href="tool.html" class="hover:text-blue-500">Инструменты</a></li>
+                <li><a href="faq.html" class="hover:text-blue-500">FAQ</a></li>
+            </ul>
+        </nav>
+        <!-- Мобильное меню -->
+        <ul id="mobile-menu" class="lg:hidden hidden bg-gray-800 text-white">
+            <li><a href="index.html" class="hover:text-blue-500">Главная</a></li>
+            <li><a href="parcing.html" class="hover:text-blue-500">Парсинг сайтов</a></li>
+            <li><a href="defend.html" class="hover:text-blue-500">Защита от парсинга</a></li>
+            <li><a href="examples.html" class="hover:text-blue-500">Примеры</a></li>
+            <li><a href="tool.html" class="hover:text-blue-500">Инструменты</a></li>
+            <li><a href="faq.html" class="hover:text-blue-500">FAQ</a></li>
+        </ul>
+    </header>
+
+    <script>
+// Функция для переключения мобильного меню
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+}
+    </script>
+
+    <main class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <aside class="col-span-1 bg-white rounded-md shadow-md p-4">
+            <h3 class="text-2xl font-bold mb-4">Навигация</h3>
+            <ul>
+                <li><a href="#1" class="hover:text-blue-500">1. Обзор инструментов</a></li>
+                <li><a href="#2" class="hover:text-blue-500">2. Сравнение инструментов</a></li>
+                <li><a href="#down" class="hover:text-blue-500">Вниз</a></li>
+            </ul>
+        </aside>
+        <section class="col-span-2">
+            <h2 class="text-3xl font-bold mb-4">Инструменты для парсинга</h2>
+            <h3 id="1" class="text-2xl font-bold mb-4">1. Обзор инструментов</h3>
+            <p class="text-lg mb-4">
+                Существуют различные инструменты для парсинга сайтов, как платные, так и бесплатные.
+                Они предлагают различные функции, такие как:
+            </p>
+            <ul class="list-disc ml-8">
+                <li class="text-lg mb-2">Скреппинг с помощью графического интерфейса.</li>
+                <li class="text-lg mb-2">Парсинг API.</li>
+                <li class="text-lg mb-2">Автоматизация задач.</li>
+                <li class="text-lg mb-2">Анализ данных.</li>
+                <li class="text-lg mb-2">Хранение и экспорт данных.</li>
+            </ul>
+
+            <h3 id="2" class="text-2xl font-bold mb-4">2. Сравнение инструментов</h3>
+            <p class="text-lg mb-4">
+                Чтобы выбрать подходящий инструмент, необходимо учесть:
+            </p>
+            <ul class="list-disc ml-8">
+                <li class="text-lg mb-2">Требуемый функционал.</li>
+                <li class="text-lg mb-2">Цена.</li>
+                <li class="text-lg mb-2">Сложность использования.</li>
+                <li class="text-lg mb-2">Поддержка различных платформ.</li>
+            </ul>
+
+            <table class="w-full table-auto border-collapse mt-4">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2 text-left font-bold">Инструмент</th>
+                        <th class="px-4 py-2 text-left font-bold">Тип</th>
+                        <th class="px-4 py-2 text-left font-bold">Цена</th>
+                        <th class="px-4 py-2 text-left font-bold">Функции</th>
+                        <th class="px-4 py-2 text-left font-bold">Сайт</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="px-4 py-2">ParseHub</td>
+                        <td class="px-4 py-2">Платформа для скреппинга</td>
+                        <td class="px-4 py-2">Бесплатный план, платные планы от $149/месяц</td>
+                        <td class="px-4 py-2">Скреппинг с помощью графического интерфейса, парсинг API, автоматизация задач, анализ данных, хранение и экспорт данных.</td>
+                        <td class="px-4 py-2"><a href="https://parsehub.com/" class="text-blue-500 hover:text-blue-700">parsehub.com</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2">Octoparse</td>
+                        <td class="px-4 py-2">Платформа для скреппинга</td>
+                        <td class="px-4 py-2">Бесплатный план, платные планы от $79/месяц</td>
+                        <td class="px-4 py-2">Скреппинг с помощью графического интерфейса, парсинг API, автоматизация задач, анализ данных, хранение и экспорт данных.</td>
+                        <td class="px-4 py-2"><a href="https://www.octoparse.com/" class="text-blue-500 hover:text-blue-700">octoparse.com</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2">Scrapy</td>
+                        <td class="px-4 py-2">Фреймворк для скреппинга</td>
+                        <td class="px-4 py-2">Бесплатный</td>
+                        <td class="px-4 py-2">Скреппинг с помощью кода, парсинг API, автоматизация задач, анализ данных, хранение и экспорт данных.</td>
+                        <td class="px-4 py-2"><a href="https://scrapy.org/" class="text-blue-500 hover:text-blue-700">scrapy.org</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2">Apify</td>
+                        <td class="px-4 py-2">Платформа для веб-скрапинга и автоматизации</td>
+                        <td class="px-4 py-2">Бесплатный план, платные планы от $49/месяц</td>
+                        <td class="px-4 py-2">Скреппинг, парсинг API, автоматизация задач, анализ данных, хранение и экспорт данных.</td>
+                        <td class="px-4 py-2"><a href="https://www.apify.com/" class="text-blue-500 hover:text-blue-700">apify.com</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-2">Import.io</td>
+                        <td class="px-4 py-2">Платформа для скреппинга</td>
+                        <td class="px-4 py-2">Платные планы от $299/месяц</td>
+                        <td class="px-4 py-2">Скреппинг с помощью графического интерфейса, парсинг API, автоматизация задач, анализ данных, хранение и экспорт данных.</td>
+                        <td class="px-4 py-2"><a href="https://www.import.io/" class="text-blue-500 hover:text-blue-700">import.io</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <div id="down"></div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 px-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Парсинг сайтов. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
